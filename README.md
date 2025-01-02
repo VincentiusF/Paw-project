@@ -6,6 +6,6 @@ home = Felix
 shop =
 detail product (saat dipencet user di keranjang) =
 account (+ bs logout) = Dimas
-keranjang =
+keranjang = Steven
 deploy web+API =
 
