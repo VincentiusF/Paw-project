@@ -1,11 +1,18 @@
 **Pembagian tugas**
 
 login = Felix
+<br>
 register = Felix
+<br>
 home = Felix
-shop =
-detail product (saat dipencet user di keranjang) =
+<br>
+shop = Vincent
+<br>
+detail product (saat dipencet user di keranjang) = Rifqan
+<br>
 account (+ bs logout) = Dimas
+<br>
 keranjang = Steven
-deploy web+API =
+<br>
+deploy web+API = Rifqan + Vincent
 
