@@ -6,7 +6,7 @@ register = Felix
 <br>
 home = Felix
 <br>
-shop =
+shop = Vincent
 <br>
 detail product (saat dipencet user di keranjang) = Rifqan
 <br>
