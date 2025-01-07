@@ -8,7 +8,7 @@ home = Felix
 <br>
 shop = Vincent
 <br>
-detail product (saat dipencet user di keranjang) = Rifqan
+detail product (saat dipencet user di shop & keranjang) = Rifqan
 <br>
 account (+ bs logout) = Dimas
 <br>
