@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
   clearCart() {
-    this.cart = []; // Kosongkan array keranjang
+    this.cart.next([]);
+    this.saveCart([]); // Kosongkan keranjang di localStorage
   }
   private products = [
     {
@@ -80,33 +82,45 @@ export class ShopService {
     }
   ];
 
-  private cartKey = 'cart'; 
+  private cartKey = 'cart';  // Nama key untuk menyimpan keranjang di localStorage
 
-  private cart: any[] = [];
+  private cart = new BehaviorSubject<any[]>(this.loadCart());
+
+  // Memuat cart dari localStorage
+  private loadCart(): any[] {
+    const cartData = localStorage.getItem(this.cartKey);
+    return cartData ? JSON.parse(cartData) : [];
+  }
 
   getProducts() {
     return this.products;
   }
 
-  addToCart(product: any) {
-    const existingProduct = this.cart.find((item) => item.id === product.id);
-
-    if (existingProduct) {
-      // Jika produk sudah ada, tambahkan quantity
-      existingProduct.quantity += 1;
-    } else {
-      // Jika produk belum ada, tambahkan ke array dengan quantity = 1
-      this.cart.push({ ...product, quantity: 1 });
-    }
+  getCart() {
+    return this.cart.asObservable();
   }
 
-  getCart() {
-    return this.cart;
+  addToCart(product: any) {
+    const currentCart = this.cart.getValue();
+    const existingProduct = currentCart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      currentCart.push({ ...product, quantity: 1 });
+    }
+
+    this.cart.next(currentCart);
+    this.saveCart(currentCart); // Simpan keranjang ke localStorage
   }
 
   removeFromCart(productId: number) {
-    this.cart = this.cart.filter((item) => item.id !== productId);
+    const currentCart = this.cart.getValue().filter((item) => item.id !== productId);
+    this.cart.next(currentCart);
+    this.saveCart(currentCart); // Simpan keranjang ke localStorage
   }
 
-  
+  private saveCart(cart: any[]) {
+    localStorage.setItem(this.cartKey, JSON.stringify(cart));
+  }
 }
