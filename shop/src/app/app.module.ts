@@ -6,9 +6,6 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { BukuComponent } from './buku/buku.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -21,9 +18,6 @@ import { ShopComponent } from './shop/shop.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
-    DashboardComponent,
-    BukuComponent,
     RegisterComponent,
     LoginComponent,
     HomeComponent,

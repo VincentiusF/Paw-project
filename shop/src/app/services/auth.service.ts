@@ -58,7 +58,7 @@ export class AuthService {
             );
             console.log(expirationDate);
             this.saveAuthData(token, expirationDate);
-            this.router.navigate(['/admin/buku']).then(() => {
+            this.router.navigate(['']).then(() => {
               window.location.reload();
             });
           }

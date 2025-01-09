@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
-import { BukuService } from '../services/buku.service';
 
 @Component({
   selector: 'app-register',
@@ -23,7 +22,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    public bukuService: BukuService,
     private fb: FormBuilder
   ) {
     this.registerForm = this.fb.group(
