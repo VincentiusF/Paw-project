@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../services/shop.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-shop',
@@ -9,7 +10,7 @@ import { ShopService } from '../services/shop.service';
 export class ShopComponent implements OnInit {
   products: any[] = [];
 
-  constructor(private shopService: ShopService) {}
+  constructor(private shopService: ShopService, private router: Router) {} 
 
   ngOnInit() {
     this.products = this.shopService.getProducts();
@@ -18,5 +19,6 @@ export class ShopComponent implements OnInit {
   addToCart(product: any) {
     this.shopService.addToCart(product);
     alert(`${product.name} telah ditambahkan ke keranjang!`);
+    this.router.navigate(['/cart']);
   }
 }

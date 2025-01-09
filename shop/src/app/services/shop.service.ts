@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ShopService {
+  clearCart() {
+    this.cart = []; // Kosongkan array keranjang
+  }
   private products = [
     {
       id: 1,
@@ -77,6 +80,8 @@ export class ShopService {
     }
   ];
 
+  private cartKey = 'cart'; 
+
   private cart: any[] = [];
 
   getProducts() {
@@ -84,10 +89,24 @@ export class ShopService {
   }
 
   addToCart(product: any) {
-    this.cart.push(product);
+    const existingProduct = this.cart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      // Jika produk sudah ada, tambahkan quantity
+      existingProduct.quantity += 1;
+    } else {
+      // Jika produk belum ada, tambahkan ke array dengan quantity = 1
+      this.cart.push({ ...product, quantity: 1 });
+    }
   }
 
   getCart() {
     return this.cart;
   }
+
+  removeFromCart(productId: number) {
+    this.cart = this.cart.filter((item) => item.id !== productId);
+  }
+
+  
 }
