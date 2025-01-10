@@ -33,4 +33,8 @@ export class ProductDetailComponent implements OnInit {
     alert(`${this.product.name} telah ditambahkan ke keranjang!`);
     this.router.navigate(['/cart']);
   }
+
+   goBackToShop(): void {
+    this.router.navigate(['/shop']);
+  }
 }
