@@ -6,6 +6,7 @@ import { AuthGuard } from './services/auth-guard';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
     path: 'cart',
     component: CartComponent,
   },
+  {
+    path : 'product/:id', 
+    component : ProductDetailComponent
+  }
 ];
 
 @NgModule({

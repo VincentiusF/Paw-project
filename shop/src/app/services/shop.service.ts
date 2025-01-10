@@ -82,6 +82,10 @@ export class ShopService {
     }
   ];
 
+    getProductById(id: number): any | undefined {
+        return this.products.find(product => product.id === id);
+    }
+
   private cartKey = 'cart';  // Nama key untuk menyimpan keranjang di localStorage
 
   private cart = new BehaviorSubject<any[]>(this.loadCart());

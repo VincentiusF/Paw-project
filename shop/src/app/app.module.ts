@@ -15,6 +15,7 @@ import { AuthInterceptor } from './services/auth-interceptor';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     HomeComponent,
     ShopComponent,
-    CartComponent
+    CartComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
