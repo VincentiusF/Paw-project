@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "shop/package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "shop/$1"
+      }
+    ]
+  }
