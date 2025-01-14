@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  private url: string = 'mongodb://mdp:BelajarMongo2024@cluster0-shard-00-00.n214x.mongodb.net:27017,cluster0-shard-00-01.n214x.mongodb.net:27017,cluster0-shard-00-02.n214x.mongodb.net:27017/dbbuku?ssl=true&replicaSet=atlas-107w2z-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0';
+  private url: string = 'mongodb+srv://kreasindo:ap8qFyuh3CN3iA3V@pembelian.ngkit.mongodb.net/';
   // private url: string = environment.api + 'users/';
   private subjectExecuteUser = new Subject<string>();
 
