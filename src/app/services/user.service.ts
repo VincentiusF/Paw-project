@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  private url: string = 'mongodb+srv://kreasindo:ap8qFyuh3CN3iA3V@pembelian.ngkit.mongodb.net/';
+  private url: string = 'https://api-kreasindo-five.vercel.app/';
   // private url: string = environment.api + 'users/';
   private subjectExecuteUser = new Subject<string>();
 
