@@ -5,13 +5,15 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   // private url: string = 'https://apisi51.vercel.app/users/';
-  private url: string = 'http://localhost:3000/users/';
+  // private url: string = 'http://localhost:3000/users/';
+  private url: string = environment.api + 'users/';
   private authStatusListener = new Subject<boolean>();
 
   private isAuthenticated = false;
