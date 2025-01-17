@@ -8,9 +8,5 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   userName: string = 'Dimas'; // Ganti dengan nama pengguna yang diambil dari sistem autentikasi
 
-  logout(): void {
-    // Tambahkan logika logout di sini
-    console.log('User logged out');
-    window.location.href = '/login'; // Arahkan ke halaman login
-  }
+
 }

@@ -11,11 +11,6 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
     component: HomeComponent,
   },
   {
@@ -31,13 +26,14 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
+    path : 'product/:id', 
+    component : ProductDetailComponent
+  },
+  {
     path: 'cart',
     component: CartComponent,
   },
-  {
-    path : 'product/:id', 
-    component : ProductDetailComponent
-  }
+
 ];
 
 @NgModule({

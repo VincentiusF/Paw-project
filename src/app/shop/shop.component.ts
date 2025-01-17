@@ -14,8 +14,9 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.shopService.getProducts();
+    console.log(this.products);  // Check if products are correctly populated
   }
-
+  
   addToCart(product: any) {
     this.shopService.addToCart(product);
     alert(`${product.name} telah ditambahkan ke keranjang!`);

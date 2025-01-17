@@ -9,8 +9,10 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  private url: string = 'https://api-kreasindo-five.vercel.app/';
-  // private url: string = environment.api + 'users/';
+  // private url: string = 'https://api-kreasindo-five.vercel.app/';
+  // private url: string = 'http://localhost:3000/users/';
+  private url: string = environment.api + 'users/';
+
   private subjectExecuteUser = new Subject<string>();
 
   constructor(public http: HttpClient) {}

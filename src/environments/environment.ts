@@ -1,3 +1,3 @@
 export const environment = {
-  api: 'https://apisi51.vercel.app/',
+  api: 'https://api-kreasindo-five.vercel.app/',
 };
