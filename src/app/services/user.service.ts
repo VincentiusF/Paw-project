@@ -11,7 +11,8 @@ import { environment } from '../../environments/environment';
 export class UserService {
   // private url: string = 'https://api-kreasindo-five.vercel.app/';
   // private url: string = 'http://localhost:3000/users/';
-  private url: string = environment.api + 'users/';
+  // private url: string = environment.api + 'users/';
+  private url: string = 'mongodb://127.0.0.1:27017/test/';
 
   private subjectExecuteUser = new Subject<string>();
 
