@@ -94,7 +94,7 @@
         <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
           <div class="offcanvas-header px-4 pb-0">
             <a class="navbar-brand" href="index.html">
-              <img src="images/main-logo.png" class="logo">
+              <img src="logo/kreasindo1.png" class="logo">
             </a>
             <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"
               data-bs-target="#bdNavbar"></button>
@@ -113,14 +113,19 @@
               </li>
             </ul>
             <div class="d-flex user-items">
-              <ul class="d-flex justify-content-end list-unstyled mb-0">
-                <li class="pe-3">
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <svg class="user">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg class="user me-2">
                       <use xlink:href="#user"></use>
                     </svg>
-                    <span style="padding-left: 3px; padding-top: 1px;">Account</span>
+                    <!-- {{ userName }} -->
                   </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="#">Account</a></li>
+                    <!-- <li><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li> -->
+                  </ul>
                 </li>
               </ul>
             </div>
