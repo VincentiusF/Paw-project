@@ -14,7 +14,7 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(private shopService: ShopService) {}
 
   ngOnInit() {
-    // Melakukan subscription untuk mendapatkan data keranjang
+    // Menggunakan getCart() untuk subscribe ke keranjang
     this.cartSubscription = this.shopService.getCart().subscribe((cart) => {
       this.cart = cart;  // Menyimpan data keranjang ke dalam array
     });
